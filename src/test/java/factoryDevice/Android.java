@@ -12,7 +12,7 @@ public class Android implements IDevice{
     @Override
     public AppiumDriver create(String appPackage, String appActivity) {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName","UPB2023_Android9");
+        capabilities.setCapability("deviceName","UPB2023_Android92");
         capabilities.setCapability("platformVersion","9.0");
         capabilities.setCapability("appPackage",appPackage);
         capabilities.setCapability("appActivity",appActivity);
@@ -22,26 +22,6 @@ public class Android implements IDevice{
         AndroidDriver device = null;
         try {
             device = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-        device.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        return device;
-    }
-
-    @Override
-    public AppiumDriver create() {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName","UPB2023_Android9");
-        capabilities.setCapability("platformVersion","9.0");
-        capabilities.setCapability("appPackage","");
-        capabilities.setCapability("appActivity","");
-        capabilities.setCapability("platformName","Android");
-        capabilities.setCapability("automationName","uiautomator2");
-
-        AndroidDriver device = null;
-        try {
-            device = new AndroidDriver(new URL(" http://192.168.50.144:4723/wd/hub"),capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
