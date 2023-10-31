@@ -12,12 +12,13 @@ public class Android implements IDevice{
     @Override
     public AppiumDriver create(String appPackage, String appActivity) {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName","UPB2023_Android92");
-        capabilities.setCapability("platformVersion","9.0");
+        capabilities.setCapability("deviceName","UPB2023_Android11");
+        capabilities.setCapability("platformVersion","11.0");
         capabilities.setCapability("appPackage",appPackage);
         capabilities.setCapability("appActivity",appActivity);
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("automationName","uiautomator2");
+        capabilities.setCapability("autoGrantPermissions", "true");
 
         AndroidDriver device = null;
         try {
